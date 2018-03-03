@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackAsTool>true</PackAsTool>
+    <OutputType>Library</OutputType>
+    <PackageId>wk.StartProcess</PackageId>
+    <Version>18.2.1</Version>
+    <TargetFrameworks>netcoreapp2.0;net45</TargetFrameworks>
+  </PropertyGroup>
+</Project>
