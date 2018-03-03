@@ -1,8 +1,14 @@
 ## Start Process
 
-```csharp
-using StartProcess;
+```
+dotnet add package wk.StartProcess
+```
 
-Processor.StartProcess("java -version");
-Processor.StartProcess("wk-file-size ../README.md")
+## Usage
+
+```csharp
+using PS = StartProcess.Processor;
+
+PS.StartProcess("java -version");
+PS.StartProcess("wk-file-size ../README.md"))
 ```

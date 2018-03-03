@@ -1,6 +1,6 @@
 #r "../src/StartProcess/bin/Debug/net45/StartProcess.dll"
 
-using StartProcess;
+using PS = StartProcess.Processor;
 
-Processor.StartProcess("java -version");
-Processor.StartProcess("wk-file-size ../README.md");
+PS.StartProcess("java -version");
+PS.StartProcess("wk-file-size ../README.md");
