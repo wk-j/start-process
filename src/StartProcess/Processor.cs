@@ -7,6 +7,7 @@ namespace StartProcess {
             var info = new ProcessStartInfo {
                 FileName = file,
                 Arguments = args,
+                CreateNoWindow = true,
                 UseShellExecute = true
             };
             var process = new Process();

@@ -9,6 +9,17 @@ Task("Pack").Does(() => {
     });
 });
 
+Task("Publish-Local-Nuget")
+    .IsDependentOn("Pack")
+    .Does(() => {
+        var nupkg = new DirectoryInfo("publish").GetFiles("*.nupkg").LastOrDefault();
+        var package = nupkg.FullName;
+        NuGetPush(package, new NuGetPushSettings {
+            Source = "http://192.168.0.109:7777/nuget",
+            ApiKey = "beecircle"
+        });
+});
+
 Task("Publish-Nuget")
     .IsDependentOn("Pack")
     .Does(() => {
