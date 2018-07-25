@@ -1,6 +1,6 @@
 ## Start Process
 
-```
+```bash
 dotnet add package wk.StartProcess
 ```
 

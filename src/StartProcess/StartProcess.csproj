@@ -1,8 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <PackageId>wk.StartProcess</PackageId>
-    <Version>18.5.0</Version>
-    <TargetFrameworks>netcoreapp2.0;net45</TargetFrameworks>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <PackageId>wk.StartProcess</PackageId>
+        <Version>18.5.1</Version>
+        <FrameworkPathOverride>/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/4.7.1-api</FrameworkPathOverride>
+        <TargetFrameworks>netcoreapp2.0;net45</TargetFrameworks>
+    </PropertyGroup>
 </Project>
