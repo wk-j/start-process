@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace StartProcess {
     public class Processor {
@@ -12,6 +13,11 @@ namespace StartProcess {
                 UseShellExecute = true,
                 WorkingDirectory = workingDir
             };
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
+                info.UseShellExecute = false;
+            }
+
             var process = new Process();
             process.StartInfo = info;
             process.Start();
