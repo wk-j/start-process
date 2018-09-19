@@ -1,25 +1,34 @@
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace StartProcess {
     public class Processor {
-        public static void StartProcess(string file, string args) {
+
+        private static void StartProcess(string file, string args, string workingDir) {
             var info = new ProcessStartInfo {
                 FileName = file,
                 Arguments = args,
-                UseShellExecute = false
+                CreateNoWindow = true,
+                UseShellExecute = false,
+                WorkingDirectory = workingDir
             };
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
+                info.UseShellExecute = false;
+            }
+
             var process = new Process();
             process.StartInfo = info;
             process.Start();
             process.WaitForExit();
         }
 
-        public static void StartProcess(string command) {
+        public static void StartProcess(string command, string workingDir = ".") {
             var args = command.Split(' ').Select(x => x.Trim());
             var process = args.Take(1).ElementAt(0);
             var processArgs = args.Skip(1).Aggregate((acc, n) => $"{acc} {n}");
-            StartProcess(process, processArgs);
+            StartProcess(process, processArgs, workingDir);
         }
     }
 }
