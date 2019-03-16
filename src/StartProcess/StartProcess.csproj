@@ -2,7 +2,7 @@
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <PackageId>wk.StartProcess</PackageId>
-        <Version>18.5.4</Version>
         <TargetFrameworks>netstandard2.0</TargetFrameworks>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 </Project>

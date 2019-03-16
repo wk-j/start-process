@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace StartProcess {
     public class Processor {
-
         private static void StartProcess(string file, string args, string workingDir) {
             var info = new ProcessStartInfo {
                 FileName = file,
@@ -14,12 +13,12 @@ namespace StartProcess {
                 WorkingDirectory = workingDir
             };
 
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
-                info.UseShellExecute = false;
-            }
+            var process = new Process {
+                StartInfo = info
+            };
 
-            var process = new Process();
-            process.StartInfo = info;
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) { }
+
             process.Start();
             process.WaitForExit();
         }

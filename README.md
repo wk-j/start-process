@@ -1,6 +1,6 @@
 ## Start Process
 
-![NuGet](https://img.shields.io/nuget/v/wk.StartProcess.svg)
+[![NuGet](https://img.shields.io/nuget/v/wk.StartProcess.svg)](https://www.nuget.org/packages/wk.StartProcess)
 
 ```bash
 dotnet add package wk.StartProcess
@@ -12,5 +12,5 @@ dotnet add package wk.StartProcess
 using PS = StartProcess.Processor;
 
 PS.StartProcess("java -version");
-PS.StartProcess("wk-file-size ../README.md");
+PS.StartProcess("wk-file-size README.md");
 ```
